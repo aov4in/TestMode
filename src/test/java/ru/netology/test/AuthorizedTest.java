@@ -23,7 +23,7 @@ public class AuthorizedTest {
         form.$(cssSelector("[name=login]")).sendKeys(user.getLogin());
         form.$(cssSelector("[name=password]")).sendKeys(user.getPassword());
         form.$(cssSelector("[type=button]")).click();
-        $(byText("Личный кабинет")).waitUntil(Condition.visible, 15000);
+        $(byText("Личный кабинет")).shouldBe(Condition.visible);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class AuthorizedTest {
         form.$(cssSelector("[name=login]")).sendKeys(user.getLogin());
         form.$(cssSelector("[name=password]")).sendKeys(user.getPassword());
         form.$(cssSelector("[type=button]")).click();
-        $(byText("Ошибка")).waitUntil(Condition.visible, 15000);
+        $("[data-test-id='error-notification']").shouldBe(Condition.visible);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class AuthorizedTest {
         form.$(cssSelector("[name=login]")).sendKeys(user.getLogin());
         form.$(cssSelector("[name=password]")).sendKeys(user.getPassword());
         form.$(cssSelector("[type=button]")).click();
-        $(byText("Ошибка")).waitUntil(Condition.visible, 11000);
+        $("[data-test-id='error-notification']").shouldBe(Condition.visible);
     }
 
     @Test
@@ -53,6 +53,6 @@ public class AuthorizedTest {
         form.$(cssSelector("[name=login]")).sendKeys(user.getLogin());
         form.$(cssSelector("[name=password]")).sendKeys(user.getPassword());
         form.$(cssSelector("[type=button]")).click();
-        $(byText("Ошибка")).waitUntil(Condition.visible, 11000);
+        $("[data-test-id='error-notification']").shouldBe(Condition.visible);
     }
 }

@@ -11,6 +11,8 @@ import java.util.Locale;
 import static io.restassured.RestAssured.given;
 
 public class DataGenerator {
+    private DataGenerator(){}
+
     private static Faker faker = new Faker(new Locale("en"));
 
     private static RequestSpecification requestSpec = new RequestSpecBuilder()
