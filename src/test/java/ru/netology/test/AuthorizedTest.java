@@ -34,6 +34,7 @@ public class AuthorizedTest {
         form.$(cssSelector("[name=password]")).sendKeys(user.getPassword());
         form.$(cssSelector("[type=button]")).click();
         $("[data-test-id='error-notification']").shouldBe(Condition.visible);
+        $("[data-test-id='error-notification'] .notification__content").shouldHave(Condition.text("Пользователь заблокирован"));
     }
 
     @Test
@@ -44,6 +45,7 @@ public class AuthorizedTest {
         form.$(cssSelector("[name=password]")).sendKeys(user.getPassword());
         form.$(cssSelector("[type=button]")).click();
         $("[data-test-id='error-notification']").shouldBe(Condition.visible);
+        $("[data-test-id='error-notification'] .notification__content").shouldHave(Condition.text("Неверно указан логин или пароль"));
     }
 
     @Test
@@ -54,5 +56,6 @@ public class AuthorizedTest {
         form.$(cssSelector("[name=password]")).sendKeys(user.getPassword());
         form.$(cssSelector("[type=button]")).click();
         $("[data-test-id='error-notification']").shouldBe(Condition.visible);
+        $("[data-test-id='error-notification'] .notification__content").shouldHave(Condition.text("Неверно указан логин или пароль"));
     }
 }
